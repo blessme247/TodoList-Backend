@@ -18,10 +18,6 @@ const port = 8080; //This port will be used when it is not busy, if it is busy, 
 // root endpoint response
 app.get("/", (req, res) => {
     res.send("Hello, World!");
-    console.log(process.env.INSTANCE_URL)
-    console.log(process.env.INSTANCE_USERNAME)
-    console.log(process.env.INSTANCE_PASSWORD)
-    console.log(process.env.INSTANCE_SCHEMA)
   });
 
 // Creating endpoint with Express Js, the endpoint is a function which will be run when a request is made.
@@ -115,15 +111,15 @@ app.post("/edit", async (req, res) => {
 
   
   // 1. route to delete a title using its id
-app.post("/delete/:title_id", async (req, res) => {
+app.post("/delete/:todo_id", async (req, res) => {
     // 2. get the id from the url parameter
-    const { title_id } = req.params;
+    const { todo_id } = req.params;
     // 3. use try/catch to control errors
     try {
       // 4. Send a delete request to the database
       const response = await db.delete({
         table: "items",
-        hashValues: [title_id],
+        hashValues: [todo_id],
       });
       // 5. send success message to the frontend
       res.status(200).send(response);
