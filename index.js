@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 // import cors
 var cors = require("cors");
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); //this adds application/json to the headers
 
 // import the harperdb instance
 const db = require("./dbconfig");
