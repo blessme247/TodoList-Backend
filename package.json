@@ -12,7 +12,7 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "start": "nodemon index.js",
-    "startAda": "nodemon ada.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   }
 }

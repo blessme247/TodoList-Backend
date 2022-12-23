@@ -89,11 +89,12 @@ app.get("/todos/:id", async (req, res) => {
 
 // 1. route to update a title
 app.post("/edit", async (req, res) => {
+// app.post("/todos/:todo_id", async (req, res) => {
     // 2. set the updated title and specify the title identifier - hash attribute
     const option = {
       id: req.body.id,
       title: req.body.title,
-      status: req.body.status,
+      // isCompleted: req.body.isCompleted,
     };
     // 3. use try/catch to control errors
     try {
